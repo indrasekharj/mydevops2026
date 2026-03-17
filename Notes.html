@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Basics Review - Learning Notes</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        h3 {
+            color: #7f8c8d;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+            font-size: 0.9em;
+        }
+        
+        pre {
+            background-color: #2f3542;
+            color: #a4b0be;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 10px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        pre code {
+            background-color: transparent;
+            color: #a4b0be;
+            padding: 0;
+        }
+        
+        .comment {
+            color: #57606f;
+            font-style: italic;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        
+        .toc {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        
+        .toc h3 {
+            margin-top: 0;
+            color: #495057;
+        }
+        
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            margin: 8px 0;
+        }
+        
+        .toc a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 5px 10px;
+            display: block;
+            border-radius: 3px;
+            transition: background-color 0.2s;
+        }
+        
+        .toc a:hover {
+            background-color: #e9ecef;
+            text-decoration: none;
+        }
+        
+        ul, ol {
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .section-divider {
+            border-top: 2px solid #dee2e6;
+            margin: 40px 0 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Python Basics Review</h1>
+        
+        <div class="toc">
+            <h3>📚 Table of Contents</h3>
+            <ul>
+                <li><a href="#what-is-python">🐍 What is Python?</a></li>
+                <li><a href="#python-environment">💻 Python in Your Local Environment</a></li>
+                <li><a href="#variables">📝 Variables</a></li>
+                <li><a href="#comments">💬 Comments</a></li>
+                <li><a href="#data-types">🔢 Common Data Types in Python</a></li>
+                <li><a href="#strings">🔤 Working with Strings</a></li>
+                <li><a href="#numbers">🧮 Working with Numbers</a></li>
+                <li><a href="#functions">⚙️ Working with Functions</a></li>
+                <li><a href="#scope">🎯 Scope in Python</a></li>
+                <li><a href="#comparison">⚖️ Comparison Operators</a></li>
+                <li><a href="#conditionals">🔀 Conditional Statements</a></li>
+                <li><a href="#boolean">🔁 Boolean Operators</a></li>
+            </ul>
+        </div>
+
+        <h2 id="what-is-python">🐍 What is Python?</h2>
+        <p><strong>Introduction:</strong> Python is a general-purpose programming language known for its simplicity and ease of use. Python is used in many fields like data science and machine learning, web development, scripting and automation, embedded systems and IoT, and much more.</p>
+        
+        <p><strong>Common Use Cases:</strong> Python is used in data science, machine learning, web development, cybersecurity, automation and microcomputers like the Raspberry Pi and MicroPython-compatible boards.</p>
+
+        <div class="section-divider"></div>
+
+        <h2 id="python-environment">💻 Python in Your Local Environment</h2>
+        <p><strong>Installation:</strong> The best way to install Python on Windows, Mac, and Linux is to download the installer from the official Python website (<a href="https://www.python.org/" target="_blank">https://www.python.org/</a>).</p>
+
+        <div class="section-divider"></div>
+
+        <h2 id="variables">📝 Variables</h2>
+        <h3>Declaring Variables</h3>
+        <p>To declare a variable, you start with the variable name followed by the assignment operator (=) and then the value. This can be a number, string, boolean, etc. Here are some examples:</p>
+        
+        <pre><code>name = 'John Doe'
+age = 25</code></pre>
+
+        <h3>Naming Conventions for Variables</h3>
+        <p>Here are the naming conventions you should use for variables:</p>
+        <ul>
+            <li>Variable names can only start with a letter or an underscore (_), not a number.</li>
+            <li>Variable names can only contain alphanumeric characters (a-z, A-Z, 0-9) and underscores (_).</li>
+            <li>Variable names are case-sensitive — <code>age</code>, <code>Age</code>, and <code>AGE</code> are all considered unique.</li>
+            <li>Variable names cannot be one of Python's reserved keywords such as <code>if</code>, <code>class</code>, or <code>def</code>.</li>
+            <li>Variables names with multiple words are separated by underscores. Ex. <code>snake_case</code>.</li>
+        </ul>
+
+        <div class="section-divider"></div>
+
+        <h2 id="comments">💬 Comments</h2>
+        <h3>Single Line Comments</h3>
+        <p>These types of comments should be used for short notes you wish to leave in your code.</p>
+        <pre><code><span class="comment"># This is a single line comment</span></code></pre>
+
+        <h3>Multi-line Strings</h3>
+        <p>These types of strings can be used to leave larger notes or to comment out sections of code.</p>
+        <pre><code><span class="comment">"""
+This is a multi-line string.
+Here is some code commented out.
+
+name = 'John Doe'
+age = 25
+"""</span></code></pre>
+
+        <h3>print() Function</h3>
+        <p>To print data to the console, you can use the <code>print()</code> function like this:</p>
+        <pre><code>print('Hello world!')  <span class="comment"># Hello world!</span></code></pre>
+
+        <div class="section-divider"></div>
+
+        <h2 id="data-types">🔢 Common Data Types in Python</h2>
+        <p><strong>Introduction:</strong> Python is a dynamically-typed language like JavaScript, meaning you don't need to explicitly declare types for variables. The language knows what the type of a variable is based on what you assign to the variable.</p>
+
+        <h3>Integer</h3>
+        <p>A whole number without decimals:</p>
+        <pre><code>my_integer_var = 10
+print('Integer:', my_integer_var)  <span class="comment"># Integer: 10</span></code></pre>
+
+        <h3>Float</h3>
+        <p>A number with decimals:</p>
+        <pre><code>my_float_var = 4.50
+print('Float:', my_float_var)  <span class="comment"># Float: 4.5</span></code></pre>
+
+        <h3>String</h3>
+        <p>A sequence of characters wrapped in quotes:</p>
+        <pre><code>my_string_var = 'hello'
+print('String:', my_string_var)  <span class="comment"># String: hello</span></code></pre>
+
+        <h3>Boolean</h3>
+        <p>A value representing either True or False:</p>
+        <pre><code>my_boolean_var = True
+print('Boolean:', my_boolean_var)  <span class="comment"># Boolean: True</span></code></pre>
+
+        <h3>Set</h3>
+        <p>An unordered collection of unique elements:</p>
+        <pre><code>my_set_var = {7, 5, 8}
+print('Set:', my_set_var)  <span class="comment"># Set: {7, 5, 8}</span></code></pre>
+
+        <h3>Dictionary</h3>
+        <p>A collection of key-value pairs, enclosed in curly braces:</p>
+        <pre><code>my_dictionary_var = {"name": "Alice", "age": 25}
+print('Dictionary:', my_dictionary_var)  <span class="comment"># Dictionary: {'name': 'Alice', 'age': 25}</span></code></pre>
+
+        <h3>Tuple</h3>
+        <p>An immutable ordered collection, enclosed in parentheses:</p>
+        <pre><code>my_tuple_var = (7, 5, 8)
+print('Tuple:', my_tuple_var)  <span class="comment"># Tuple: (7, 5, 8)</span></code></pre>
+
+        <h3>Range</h3>
+        <p>A sequence of numbers, often used in loops:</p>
+        <pre><code>my_range_var = range(5)
+print(my_range_var)  <span class="comment"># range(0, 5)</span></code></pre>
+
+        <h3>List</h3>
+        <p>An ordered collection of elements that supports different data types:</p>
+        <pre><code>my_list = [22, 'Hello world', 3.14, True]
+print(my_list)  <span class="comment"># [22, 'Hello world', 3.14, True]</span></code></pre>
+
+        <h3>None</h3>
+        <p>A special value that represents the absence of a value:</p>
+        <pre><code>my_none_var = None
+print('None:', my_none_var)  <span class="comment"># None: None</span></code></pre>
+
+        <h3>Immutable and Mutable Types</h3>
+        <p><strong>Immutable Types:</strong> These types cannot change once declared, although you can point their variables at something new, which is called reassignment. They include integer, float, complex, boolean, string, tuple, range, and None.</p>
+        
+        <p><strong>Mutable Types:</strong> These types can change once declared. You can add, remove, or update their items. They include collection types such as list, set, and dictionary.</p>
+
+        <h3>type() Function</h3>
+        <p>To see the type for a variable, you can use the <code>type()</code> function like this:</p>
+        <pre><code>greeting = 'Hello there!'
+age = 21
+
+print(type(greeting))  <span class="comment"># &lt;class 'str'&gt;</span>
+print(type(age))       <span class="comment"># &lt;class 'int'&gt;</span></code></pre>
+
+        <h3>isinstance() Function</h3>
+        <p>This is used to check if a variable matches a specific data type:</p>
+        <pre><code>greeting = 'Hello world'
+name = 'John Doe'
+
+print(isinstance(greeting, str))  <span class="comment"># True</span>
+print(isinstance(name, int))      <span class="comment"># False</span></code></pre>
+
+        <div class="section-divider"></div>
+
+        <h2 id="strings">🔤 Working with Strings</h2>
+        <h3>Definition</h3>
+        <p>As you recall from JavaScript, strings are immutable which means you can not change them after they have been created. In Python, you can use either single or double quotes. It is recommended to choose a rule and stick with it:</p>
+        <pre><code>developer = 'Jessica'
+city = "Los Angeles"</code></pre>
+
+        <h3>Accessing Characters from Strings</h3>
+        <p>You can access characters from strings by using bracket notation like this:</p>
+        <pre><code>my_str = 'Hello world'
+
+print(my_str[0])   <span class="comment"># H</span>
+print(my_str[6])   <span class="comment"># w</span>
+
+print(my_str[-1])  <span class="comment"># d</span>
+print(my_str[-2])  <span class="comment"># l</span></code></pre>
+
+        <h3>Escaping Strings</h3>
+        <p>You can use a backslash (\) if your string contains quotes like this:</p>
+        <pre><code>msg = 'It\'s a sunny day'
+quote = "She said, \"Hello!\""</code></pre>
+
+        <h3>String Concatenation</h3>
+        <p>To concatenate strings, you can use the + operator like this:</p>
+        <pre><code>developer = 'Jessica'
+print('My name is ' + developer + '.')  <span class="comment"># My name is Jessica.</span></code></pre>
+
+        <p>Another way to concatenate strings is by using the += operator. This is used to perform concatenation and assignment in the same step like this:</p>
+        <pre><code>greeting = 'My name is '
+developer = 'Jessica.'
+
+greeting += developer
+print(greeting)  <span class="comment"># My name is Jessica.</span></code></pre>
+
+        <h3>f-strings</h3>
+        <p>This is short for formatted string literals. It allows you to handle interpolation and also do some concatenation with a compact and readable syntax:</p>
+        <pre><code>developer = 'Jessica'
+greeting = f'My name is {developer}.'
+print(greeting)  <span class="comment"># My name is Jessica.</span></code></pre>
+
+        <h3>String Slicing</h3>
+        <p>This is when you can extract portions of a string. Here is the basic syntax:</p>
+        <pre><code>str[start:stop:step]</code></pre>
+        
+        <p>The start position represents the index where the extraction should begin. The stop position is where the slice should end. This position is non inclusive. The step position represents the interval to increment for the slicing. Here are some examples:</p>
+        <pre><code>message = 'Python is fun!'
+
+print(message[0:6])  <span class="comment"># Python</span>
+print(message[7:])   <span class="comment"># is fun!</span>
+print(message[::2])  <span class="comment"># Pto sfn</span></code></pre>
+
+        <h3>Getting the Length of a String</h3>
+        <p>The <code>len()</code> function is used to return the number of the characters in the string:</p>
+        <pre><code>developer = 'Jessica'
+
+print(len(developer))  <span class="comment"># 7</span></code></pre>
+
+        <h3>Working with the in operator</h3>
+        <p>This returns a boolean that specifies whether the character or characters exist in the string or not:</p>
+        <pre><code>my_str = 'Hello world'
+
+print('Hello' in my_str)  <span class="comment"># True</span>
+print('hey' in my_str)    <span class="comment"># False</span>
+print('hi' in my_str)     <span class="comment"># False</span>
+print('e' in my_str)      <span class="comment"># True</span>
+print('f' in my_str)      <span class="comment"># False</span></code></pre>
+
+        <h3>Common String Methods</h3>
+        
+        <h4>str.upper()</h4>
+        <p>This returns a new string with all characters converted to uppercase:</p>
+        <pre><code>developer = 'Jessica'
+
+print(developer.upper())  <span class="comment"># JESSICA</span></code></pre>
+
+        <h4>str.lower()</h4>
+        <p>This returns a new string with all characters converted to lowercase:</p>
+        <pre><code>developer = 'Jessica'
+
+print(developer.lower())  <span class="comment"># jessica</span></code></pre>
+
+        <h4>str.strip()</h4>
+        <p>This returns a copy of the string with specified leading and trailing characters removed (if no argument is passed to the method, it removes leading and trailing whitespace).</p>
+        <pre><code>greeting = '  hello world  '
+
+trimmed_my_str = greeting.strip()
+print(trimmed_my_str)  <span class="comment"># 'hello world'</span></code></pre>
+
+        <h4>replace()</h4>
+        <p>This returns a new string with all occurrences of the old string replaced by a new one.</p>
+        <pre><code>greeting = 'hello world'
+
+replaced_my_str = greeting.replace('hello', 'hi')
+print(replaced_my_str)  <span class="comment"># 'hi world'</span></code></pre>
+
+        <h4>split()</h4>
+        <p>This is used to split a string into a list using a specified separator. A separator is a string specifying where the split should happen.</p>
+        <pre><code>dashed_name = 'example-dashed-name'
+
+split_words = dashed_name.split('-')
+print(split_words)  <span class="comment"># ['example', 'dashed', 'name']</span></code></pre>
+
+        <h4>join()</h4>
+        <p>This is used to join elements of an iterable into a string with a separator. An iterable is a collection of elements that can be looped over like a list, string or a tuple.</p>
+        <pre><code>example_list = ['example', 'dashed', 'name']
+
+joined_str = ' '.join(example_list)
+print(joined_str)  <span class="comment"># example dashed name</span></code></pre>
+
+        <div class="section-divider"></div>
+
+        <h2 id="numbers">🧮 Working with Numbers</h2>
+        <h3>Basic Math Operations</h3>
+        <p>In Python, you can do basic math operations with integers and floats including addition, subtraction, multiplication and division:</p>
+        
+        <pre><code>int_1 = 56
+int_2 = 12
+float_1 = 5.4
+float_2 = 12.0
+
+<span class="comment"># Addition</span>
+print('Integer Addition:', int_1 + int_2)    <span class="comment"># Integer Addition: 68</span>
+print('Float Addition:', float_1 + float_2)  <span class="comment"># Float Addition: 17.4</span>
+
+<span class="comment"># Subtraction</span>
+print('Int Subtraction:', int_1 - int_2)     <span class="comment"># Int Subtraction: 44</span>
+print('Float Subtraction:', float_2 - float_1) <span class="comment"># Float Subtraction: 6.6</span>
+
+<span class="comment"># Multiplication</span>
+print('Int Multiplication:', int_1 * int_2)    <span class="comment"># Int Multiplication: 672</span>
+print('Float Multiplication:', float_2 * float_1) <span class="comment"># Float Multiplication: 64.8</span>
+
+<span class="comment"># Division</span>
+print('Int Division:', int_1 / int_2)          <span class="comment"># Int Division: 4.666666666666667</span>
+print('Float Division:', float_2 / float_1)    <span class="comment"># Float Division: 2.222222222222222</span></code></pre>
+
+        <div class="highlight">
+            <strong>Note:</strong> When you add a float and an integer, the result will be converted to a float.
+        </div>
+
+        <h3>Special Operators</h3>
+
+        <h4>Modulo Operator (%)</h4>
+        <p>This returns the remainder when a number is divided by another number:</p>
+        <pre><code>int_1 = 56
+int_2 = 12
+
+print(int_1 % int_2)  <span class="comment"># 8</span></code></pre>
+
+        <h4>Floor Division (//)</h4>
+        <p>This operator is used to divide two numbers and round down the result to the nearest whole number:</p>
+        <pre><code>int_1 = 56
+int_2 = 12
+
+print(int_1 // int_2)  <span class="comment"># 4</span></code></pre>
+
+        <h4>Exponentiation Operator (**)</h4>
+        <p>This operator is used to raise a number to the power of another:</p>
+        <pre><code>int_1 = 4
+int_2 = 2
+
+print(int_1 ** int_2)  <span class="comment"># 16</span></code></pre>
+
+        <div class="section-divider"></div>
+
+        <h2 id="functions">⚙️ Working with Functions</h2>
+        <p><strong>Definition:</strong> Functions are reusable pieces of code that take inputs (arguments) and returns an output. To call a function, you need to reference the function name followed by a set of parenthesis:</p>
+
+        <pre><code><span class="comment"># Defining a function</span>
+def get_sum(num_1, num_2):
+    return num_1 + num_2
+
+result = get_sum(3, 4)  <span class="comment"># function call</span>
+print(result)           <span class="comment"># 7</span></code></pre>
+
+        <p>If a function does not explicitly return a value, then the default return value is None:</p>
+        <pre><code>def greet():
+    print('hello') 
+
+result = greet()  <span class="comment"># hello</span>
+print(result)     <span class="comment"># None</span></code></pre>
+
+        <h3>Default Parameters</h3>
+        <p>You can also supply default values to parameters like this:</p>
+        <pre><code>def get_sum(num_1, num_2=2):
+    return num_1 + num_2
+
+result = get_sum(3) 
+print(result)  <span class="comment"># 5</span></code></pre>
+
+        <div class="section-divider"></div>
+
+        <h2 id="scope">🎯 Scope in Python</h2>
+        
+        <h3>Local Scope</h3>
+        <p>This is when a variable declared inside a function or class can only be accessed within that function or class.</p>
+        <pre><code>def my_func():
+    num = 10
+    print(num)</code></pre>
+
+        <h3>Global Scope</h3>
+        <p>This refers to variables that are declared outside any functions or classes which can be accessed from anywhere in the program.</p>
+        <pre><code>tax = 0.70 
+
+def get_total(subtotal):
+    total = subtotal + (subtotal * tax)
+    return total
+
+print(get_total(100))  <span class="comment"># 170.0</span></code></pre>
+
+        <div class="section-divider"></div>
+
+        <h2 id="comparison">⚖️ Comparison Operators</h2>
+        
+        <h3>Equal (==)</h3>
+        <p>Checks if two values are equal:</p>
+        <pre><code>print(3 == 4)  <span class="comment"># False</span></code></pre>
+
+        <h3>Not equal (!=)</h3>
+        <p>Checks if two values are not equal:</p>
+        <pre><code>print(3 != 4)  <span class="comment"># True</span></code></pre>
+
+        <h3>Greater than (>)</h3>
+        <p>Checks if one value is greater than another:</p>
+        <pre><code>print(3 > 4)  <span class="comment"># False</span></code></pre>
+
+        <h3>Less than (<)</h3>
+        <p>Checks if one value is less than another:</p>
+        <pre><code>print(3 < 4)  <span class="comment"># True</span></code></pre>
+
+        <h3>Greater than or equal (>=)</h3>
+        <p>Checks if one value is greater than or equal to another:</p>
+        <pre><code>print(3 >= 4)  <span class="comment"># False</span></code></pre>
+
+        <h3>Less than or equal (<=)</h3>
+        <p>Checks if one value is less than or equal to another:</p>
+        <pre><code>print(3 <= 4)  <span class="comment"># True</span></code></pre>
+
+        <div class="section-divider"></div>
+
+        <h2 id="conditionals">🔀 Conditional Statements</h2>
+        
+        <h3>if Statements</h3>
+        <p>These are conditions used to determine if something is true or not. If the condition evaluates to True, then that block of code will run.</p>
+        <pre><code>age = 18
+
+if age >= 18:
+    print('You are an adult')  <span class="comment"># You are an adult</span></code></pre>
+
+        <h3>elif Statement</h3>
+        <p>These are conditions that come after an if statement. An elif block runs only if all previous conditions evaluate to False and its own condition evaluates to True.</p>
+        <pre><code>age = 16
+
+if age >= 18:
+    print('You are an adult')
+elif age >= 13:
+    print('You are a teenager')  <span class="comment"># You are a teenager</span></code></pre>
+
+        <h3>else Clause</h3>
+        <p>This will run if no other conditions evaluate to True.</p>
+        <pre><code>age = 12
+
+if age >= 18:
+    print('You are an adult')
+elif age >= 13:
+    print('You are a teenager')
+else:
+    print('You are a child')  <span class="comment"># You are a child</span></code></pre>
+
+        <div class="section-divider"></div>
+
+        <h2 id="boolean">🔁 Boolean Operators</h2>
+        
+        <h3>Truthy and Falsy Values</h3>
+        <p>In Python, every value has an inherent boolean value. Many values are considered truthy, that is, they evaluate to True in a logical context. Others are falsy, meaning they evaluate to False. Here are some examples of falsy values:</p>
+        
+        <ul>
+            <li><code>None</code></li>
+            <li><code>False</code></li>
+            <li>Integer <code>0</code></li>
+            <li>Float <code>0.0</code></li>
+            <li>Empty strings <code>''</code></li>
+        </ul>
+
+        <p>Other values like non-zero numbers, and non-empty strings are truthy.</p>
+
+        <h3>bool() Function</h3>
+        <p>If you want to check whether a value is truthy or falsy, you can use the built-in <code>bool()</code> function:</p>
+        <pre><code>print(bool(False))   <span class="comment"># False</span>
+print(bool(0))       <span class="comment"># False</span>
+print(bool(''))      <span class="comment"># False</span>
+
+print(bool(True))    <span class="comment"># True</span>
+print(bool(1))       <span class="comment"># True</span>
+print(bool('Hello')) <span class="comment"># True</span></code></pre>
+
+        <h3>Boolean Operators</h3>
+        
+        <h4>and Operator</h4>
+        <p>This operator takes two operands and returns the first operand if it is falsy, otherwise, it returns the second operand. Both operands must be truthy for an expression to result in a truthy value.</p>
+        <pre><code>is_citizen = True
+age = 25
+
+if is_citizen and age >= 18:
+    print('You are eligible to vote')  <span class="comment"># You are eligible to vote</span>
+else:
+    print('You are not eligible to vote')</code></pre>
+
+        <h4>or Operator</h4>
+        <p>This operator returns the first operand if it is truthy, otherwise, it returns the second operand. An or expression results in a truthy value if at least one operand is truthy.</p>
+        <pre><code>age = 19
+is_student = True
+
+if age < 18 or is_student:
+    print('You are eligible for a student discount')  <span class="comment"># You are eligible for a student discount</span>
+else:
+    print('You are not eligible for a student discount')</code></pre>
+
+        <h4>not Operator</h4>
+        <p>This operator takes a single operand and inverts its boolean value. It converts truthy values to False and falsy values to True.</p>
+        <pre><code>print(not '')       <span class="comment"># True, because empty string is falsy</span>
+print(not 'Hello')  <span class="comment"># False, because non-empty string is truthy</span>
+print(not 0)        <span class="comment"># True, because 0 is falsy</span>
+print(not 1)        <span class="comment"># False, because 1 is truthy</span></code></pre>
+
+        <div class="highlight">
+            <p><strong>Short-circuiting:</strong> The <code>and</code> and <code>or</code> operators are known as short-circuit operators. Short-circuiting means Python checks values from left to right and stops as soon as it determines the final result.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; padding-top: 30px; border-top: 2px solid #dee2e6; color: #6c757d;">
+            <p>📖 Happy Learning! Keep practicing these Python basics! 🐍</p>
+        </div>
+    </div>
+</body>
+</html>
